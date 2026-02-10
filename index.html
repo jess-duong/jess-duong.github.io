@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jessica Duong — Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest: #1a3a2a;
+  --forest-dark: #0f2419;
+  --forest-light: #2d5a42;
+  --cream: #f8f5f0;
+  --cream-dark: #ede8e0;
+  --gold: #c9a84c;
+  --gold-light: #d4b96a;
+  --charcoal: #2c2c2c;
+  --text: #3a3a3a;
+  --text-light: #6b6b6b;
+  --white: #ffffff;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ---- NAV ---- */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(248,245,240,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 16px 32px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.nav-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.25rem; color: var(--forest);
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  text-decoration: none; color: var(--text-light);
+  font-size: 0.9rem; font-weight: 500;
+  transition: color 0.3s;
+  letter-spacing: 0.02em;
+}
+.nav-links a:hover { color: var(--forest); }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-toggle span {
+  display: block; width: 24px; height: 2px;
+  background: var(--forest); margin: 6px 0;
+  transition: all 0.3s;
+}
+
+/* ---- HERO ---- */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 120px 32px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(26,58,42,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -100px; left: -100px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: center;
+  position: relative; z-index: 1;
+}
+.hero-text h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  color: var(--forest-dark);
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+.hero-text .subtitle {
+  font-size: 1.15rem; color: var(--forest-light);
+  font-weight: 500; margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+.hero-text .tagline {
+  font-size: 1.05rem; color: var(--text-light);
+  max-width: 480px; margin-bottom: 32px;
+}
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px; border-radius: 8px;
+  font-size: 0.95rem; font-weight: 600;
+  text-decoration: none; transition: all 0.3s;
+  cursor: pointer; border: none;
+}
+.btn-primary {
+  background: var(--forest); color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--forest-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26,58,42,0.25);
+}
+.btn-outline {
+  background: transparent; color: var(--forest);
+  border: 2px solid var(--forest);
+}
+.btn-outline:hover {
+  background: var(--forest); color: var(--white);
+  transform: translateY(-2px);
+}
+
+.hero-photo {
+  display: flex; justify-content: center; align-items: center;
+}
+.photo-frame {
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--forest);
+  box-shadow: var(--shadow-lg), 0 0 0 12px rgba(26,58,42,0.05);
+  position: relative;
+}
+.photo-frame img {
+  width: 100%; height: 100%; object-fit: cover;
+  object-position: center 15%;
+}
+
+/* ---- SECTION SHARED ---- */
+section { padding: 100px 32px; }
+.section-header {
+  text-align: center; margin-bottom: 64px;
+}
+.section-header h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  color: var(--forest-dark);
+  margin-bottom: 12px;
+}
+.section-header p {
+  color: var(--text-light); max-width: 560px;
+  margin: 0 auto; font-size: 1.05rem;
+}
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px;
+}
+
+/* ---- ABOUT ---- */
+.about { background: var(--white); }
+.about-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: start;
+}
+.about-text p { margin-bottom: 16px; color: var(--text); }
+.about-text p strong { color: var(--forest-dark); }
+
+.skills-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+}
+.skill-card {
+  background: var(--cream);
+  padding: 24px; border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.skill-card h4 {
+  font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--forest); margin-bottom: 10px;
+}
+.skill-card p {
+  font-size: 0.9rem; color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ---- PROJECTS ---- */
+.projects { background: var(--cream); }
+.projects-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; gap: 32px;
+}
+.project-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.4s ease;
+  display: grid; grid-template-columns: 1fr 1fr;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.project-info {
+  padding: 40px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.project-tag {
+  display: inline-block;
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px;
+}
+.project-info h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem; color: var(--forest-dark);
+  margin-bottom: 12px; line-height: 1.3;
+}
+.project-info p {
+  color: var(--text-light); font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+.project-tools {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 20px;
+}
+.tool-tag {
+  font-size: 0.78rem; padding: 4px 12px;
+  background: var(--cream); border-radius: 20px;
+  color: var(--text-light); font-weight: 500;
+}
+.project-links { display: flex; gap: 12px; }
+.project-links a {
+  font-size: 0.85rem; font-weight: 600;
+  color: var(--forest); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 4px;
+  transition: color 0.3s;
+}
+.project-links a:hover { color: var(--gold); }
+
+.project-visual {
+  background: var(--forest);
+  padding: 40px;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+.project-visual::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 50%);
+}
+.project-visual .project-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 6rem; color: rgba(255,255,255,0.08);
+  position: absolute; top: 16px; right: 24px;
+  line-height: 1;
+}
+.project-visual .metrics {
+  position: relative; z-index: 1;
+  text-align: center;
+}
+.project-visual .metric-value {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.8rem; color: var(--gold);
+  line-height: 1.1;
+}
+.project-visual .metric-label {
+  font-size: 0.85rem; color: rgba(255,255,255,0.7);
+  margin-top: 4px;
+}
+.project-visual .metric-divider {
+  width: 40px; height: 1px;
+  background: rgba(255,255,255,0.2);
+  margin: 16px auto;
+}
+
+.project-card:nth-child(even) { direction: rtl; }
+.project-card:nth-child(even) > * { direction: ltr; }
+
+/* ---- EXPERIENCE ---- */
+.experience { background: var(--white); }
+.exp-grid {
+  max-width: 900px; margin: 0 auto;
+  display: flex; flex-direction: column; gap: 0;
+  position: relative;
+}
+.exp-grid::before {
+  content: '';
+  position: absolute; left: 24px; top: 0; bottom: 0;
+  width: 2px; background: var(--cream-dark);
+}
+.exp-item {
+  display: grid; grid-template-columns: 48px 1fr;
+  gap: 24px; padding: 24px 0;
+}
+.exp-dot {
+  width: 12px; height: 12px;
+  background: var(--forest); border-radius: 50%;
+  margin-top: 6px; justify-self: center;
+  position: relative; z-index: 1;
+  box-shadow: 0 0 0 4px var(--white);
+}
+.exp-content h3 {
+  font-size: 1.1rem; color: var(--forest-dark);
+  font-weight: 600;
+}
+.exp-content .exp-meta {
+  font-size: 0.88rem; color: var(--text-light);
+  margin-bottom: 8px;
+}
+.exp-content p {
+  font-size: 0.92rem; color: var(--text);
+}
+
+/* ---- CONTACT ---- */
+.contact {
+  background: var(--forest-dark);
+  color: var(--white);
+  text-align: center;
+}
+.contact .section-header h2 { color: var(--white); }
+.contact .section-header p { color: rgba(255,255,255,0.6); }
+.contact .section-label { color: var(--gold); }
+.contact-links {
+  display: flex; justify-content: center;
+  gap: 24px; flex-wrap: wrap;
+  margin-top: 32px;
+}
+.contact-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--cream); text-decoration: none;
+  font-size: 0.95rem; font-weight: 500;
+  padding: 12px 24px; border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all 0.3s;
+}
+.contact-link:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ---- FOOTER ---- */
+footer {
+  background: var(--forest-dark);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 24px 32px;
+  text-align: center;
+}
+footer p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ---- ANIMATIONS ---- */
+.fade-in {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible {
+  opacity: 1; transform: translateY(0);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+  .hero-text .tagline { margin: 0 auto 32px; }
+  .hero-actions { justify-content: center; }
+  .photo-frame { width: 260px; height: 260px; }
+  .hero-photo { order: -1; }
+  .about-grid { grid-template-columns: 1fr; }
+  .project-card { grid-template-columns: 1fr; }
+  .project-card:nth-child(even) { direction: ltr; }
+  .project-visual { min-height: 200px; }
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav-links.active {
+    display: flex; flex-direction: column;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--cream); padding: 24px 32px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    gap: 16px;
+  }
+}
+@media (max-width: 600px) {
+  section { padding: 64px 20px; }
+  .nav-inner { padding: 14px 20px; }
+  .hero { padding: 100px 20px 60px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .project-info { padding: 28px; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .contact-links { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">JD</a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="section-label">Data Analyst</span>
+      <h1>Jessica Duong</h1>
+      <p class="subtitle">Healthcare & Operations Analytics</p>
+      <p class="tagline">I turn complex, messy data into clear insights that drive smarter decisions and measurable outcomes. Experienced in SQL, Python, Tableau, and Excel with a clinical healthcare background.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects ↓</a>
+        <a id="resumeBtn" class="btn btn-outline" href="Jessica_Duong_Resume.pdf" download="Jessica_Duong_Resume.pdf">Download Resume</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="photo-frame">
+        <img id="profileImg" alt="Jessica Duong" src="profile.jpg">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-header fade-in">
+    <span class="section-label">About</span>
+    <h2>Background & Skills</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text fade-in">
+      <p>I'm a <strong>Data Analyst</strong> with clinical healthcare experience and proficiency in SQL, Python, Tableau, and Excel. My background includes work as a <strong>Surgical Care Technician</strong> and <strong>Certified Dental Assistant</strong>, combined with 6+ years of performance tracking and cohort analysis in education.</p>
+      <p>I specialize in cleaning complex datasets, building segmentation frameworks, and translating data into actionable insights for stakeholders. I'm currently completing an intensive Data Analytics certificate through CareerFoundry, with 6 portfolio projects in healthcare analytics, segmentation, and workforce planning.</p>
+      <p>Previously, I taught at international schools in Shanghai and Guangzhou, China, where I designed performance tracking systems and presented data-driven strategy recommendations to school leadership.</p>
+    </div>
+    <div class="skills-grid fade-in">
+      <div class="skill-card">
+        <h4>Languages & Tools</h4>
+        <p>SQL, PostgreSQL, Python (pandas, NumPy, scikit-learn), Tableau, Excel, Jupyter Notebook</p>
+      </div>
+      <div class="skill-card">
+        <h4>Analysis</h4>
+        <p>Data Cleaning, Segmentation, Cohort Analysis, KPI Development, Regression, Clustering, Forecasting</p>
+      </div>
+      <div class="skill-card">
+        <h4>Visualization</h4>
+        <p>Tableau Dashboards, matplotlib, seaborn, Data Storytelling, Stakeholder Reporting</p>
+      </div>
+      <div class="skill-card">
+        <h4>Domain</h4>
+        <p>Healthcare Operations, Patient Data & Compliance, Workforce Planning, Clinical Workflows</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="section-header fade-in">
+    <span class="section-label">Portfolio</span>
+    <h2>Analytics Projects</h2>
+    <p>End-to-end data projects spanning healthcare, e-commerce, streaming, and compliance.</p>
+  </div>
+  <div class="projects-grid">
+
+    <!-- Project 1: NYC Healthcare Access Equity -->
+    <div class="project-card fade-in">
+      <div class="project-info">
+        <span class="project-tag">Healthcare Analytics</span>
+        <h3>NYC Healthcare Access Equity Analysis</h3>
+        <p>Analyzed geospatial healthcare data across NYC boroughs using regression and clustering to identify access equity gaps in underserved communities. Built a segmentation framework and Tableau dashboard to support data-driven resource allocation for public health stakeholders.</p>
+        <div class="project-tools">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">pandas</span>
+          <span class="tool-tag">NumPy</span>
+          <span class="tool-tag">scikit-learn</span>
+          <span class="tool-tag">matplotlib</span>
+          <span class="tool-tag">seaborn</span>
+          <span class="tool-tag">Jupyter</span>
+        </div>
+        <div class="project-links">
+          <a href="#">GitHub Repo →</a>
+        </div>
+      </div>
+      <div class="project-visual">
+        <span class="project-number">01</span>
+        <div class="metrics">
+          <div class="metric-value">5</div>
+          <div class="metric-label">NYC boroughs analyzed</div>
+          <div class="metric-divider"></div>
+          <div class="metric-value" style="font-size:1.6rem;">Geospatial</div>
+          <div class="metric-label">Regression & clustering</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2: Instacart -->
+    <div class="project-card fade-in">
+      <div class="project-info">
+        <span class="project-tag">Customer Analytics</span>
+        <h3>Instacart Customer Segmentation & Revenue Optimization</h3>
+        <p>Cleaned and analyzed 32.4M records across 206K customers to build a segmentation framework identifying high-value personas and revenue patterns. Produced 27 visualizations and marketing recommendations for ad spend optimization, targeting, and cross-sell strategy.</p>
+        <div class="project-tools">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">pandas</span>
+          <span class="tool-tag">NumPy</span>
+          <span class="tool-tag">matplotlib</span>
+          <span class="tool-tag">seaborn</span>
+        </div>
+        <div class="project-links">
+          <a href="#">GitHub Repo →</a>
+        </div>
+      </div>
+      <div class="project-visual">
+        <span class="project-number">02</span>
+        <div class="metrics">
+          <div class="metric-value">32.4M</div>
+          <div class="metric-label">Records analyzed</div>
+          <div class="metric-divider"></div>
+          <div class="metric-value">206K</div>
+          <div class="metric-label">Customers segmented</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3: Rockbuster -->
+    <div class="project-card fade-in">
+      <div class="project-info">
+        <span class="project-tag">Market Intelligence</span>
+        <h3>Rockbuster Revenue & Market Analysis</h3>
+        <p>Wrote complex SQL (JOINs, CTEs, window functions) across a 15-table relational database to calculate customer lifetime value and prioritize markets across 108 countries. Developed a phased rollout strategy with Tableau dashboards, focusing on 3 Tier-1 markets representing 40% of the customer base.</p>
+        <div class="project-tools">
+          <span class="tool-tag">SQL</span>
+          <span class="tool-tag">PostgreSQL</span>
+          <span class="tool-tag">Tableau</span>
+        </div>
+        <div class="project-links">
+          <a href="#">GitHub Repo →</a>
+          <a href="#">Tableau Dashboard →</a>
+        </div>
+      </div>
+      <div class="project-visual">
+        <span class="project-number">03</span>
+        <div class="metrics">
+          <div class="metric-value">108</div>
+          <div class="metric-label">Countries analyzed</div>
+          <div class="metric-divider"></div>
+          <div class="metric-value">15</div>
+          <div class="metric-label">Table relational database</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 4: Influenza -->
+    <div class="project-card fade-in">
+      <div class="project-info">
+        <span class="project-tag">Workforce Planning</span>
+        <h3>Influenza Staffing Optimization</h3>
+        <p>Forecasted seasonal staffing demand across 50 states using a population-based risk model (R² = 0.88), integrating CDC mortality and demographic data. Delivered a Tableau decision dashboard enabling proactive workforce planning 1–2 months ahead of peak flu season.</p>
+        <div class="project-tools">
+          <span class="tool-tag">Excel</span>
+          <span class="tool-tag">Tableau</span>
+          <span class="tool-tag">Statistical Modeling</span>
+          <span class="tool-tag">CDC Data</span>
+        </div>
+        <div class="project-links">
+          <a href="#">Tableau Dashboard →</a>
+          <a href="#">GitHub Repo →</a>
+        </div>
+      </div>
+      <div class="project-visual">
+        <span class="project-number">04</span>
+        <div class="metrics">
+          <div class="metric-value">R² = 0.88</div>
+          <div class="metric-label">Model predictability</div>
+          <div class="metric-divider"></div>
+          <div class="metric-value">50</div>
+          <div class="metric-label">States forecasted</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 5: GameCo -->
+    <div class="project-card fade-in">
+      <div class="project-info">
+        <span class="project-tag">Sales Strategy</span>
+        <h3>GameCo Global Sales Strategy</h3>
+        <p>Analyzed 16,598 video game titles across global markets to identify regional demand patterns and genre preferences. Discovered Europe overtook North America by 2016 (37.7% vs. 31.9%), enabling data-backed budget allocation recommendations for development and marketing spend.</p>
+        <div class="project-tools">
+          <span class="tool-tag">Excel</span>
+          <span class="tool-tag">Pivot Tables</span>
+          <span class="tool-tag">Statistical Analysis</span>
+        </div>
+        <div class="project-links">
+          <a href="#">GitHub Repo →</a>
+        </div>
+      </div>
+      <div class="project-visual">
+        <span class="project-number">05</span>
+        <div class="metrics">
+          <div class="metric-value">16.6K</div>
+          <div class="metric-label">Games analyzed (1980–2016)</div>
+          <div class="metric-divider"></div>
+          <div class="metric-value">4</div>
+          <div class="metric-label">Global regions compared</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 6: Risk & Responsible Analytics -->
+    <div class="project-card fade-in">
+      <div class="project-info">
+        <span class="project-tag">Compliance & Ethics</span>
+        <h3>Risk & Responsible Analytics Foundations</h3>
+        <p>Applied analytics for compliance, forecasting, and ethical decision-making. Designed bias-free AML alert logic using behavioral thresholds that removed 6.8x demographic bias. Modeled trends and seasonality for proactive staffing, and identified PII vulnerabilities with privacy and security controls.</p>
+        <div class="project-tools">
+          <span class="tool-tag">Excel</span>
+          <span class="tool-tag">Statistical Modeling</span>
+          <span class="tool-tag">Decision Trees</span>
+          <span class="tool-tag">Data Ethics</span>
+        </div>
+        <div class="project-links">
+          <a href="#">GitHub Repo →</a>
+        </div>
+      </div>
+      <div class="project-visual">
+        <span class="project-number">06</span>
+        <div class="metrics">
+          <div class="metric-value">6.8×</div>
+          <div class="metric-label">Demographic bias removed</div>
+          <div class="metric-divider"></div>
+          <div class="metric-value">3</div>
+          <div class="metric-label">Analytics domains covered</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="section-header fade-in">
+    <span class="section-label">Experience</span>
+    <h2>Career Timeline</h2>
+  </div>
+  <div class="exp-grid">
+    <div class="exp-item fade-in">
+      <div class="exp-dot"></div>
+      <div class="exp-content">
+        <h3>Data Analytics Certificate</h3>
+        <div class="exp-meta">CareerFoundry · Expected March 2026</div>
+        <p>Intensive program covering SQL, Python, Tableau, and Excel. 6 portfolio projects in healthcare analytics, segmentation, and workforce planning.</p>
+      </div>
+    </div>
+    <div class="exp-item fade-in">
+      <div class="exp-dot"></div>
+      <div class="exp-content">
+        <h3>Reading Interventionist & 3rd Grade ELA Teacher</h3>
+        <div class="exp-meta">SVN Charter School · Kansas City, MO · 2024 – Present</div>
+        <p>Analyze student assessment data across 3 grade levels to segment students by mastery level and design targeted intervention pipelines. Track and report KPIs including MAP benchmarks, fluency rates, and phonics mastery.</p>
+      </div>
+    </div>
+    <div class="exp-item fade-in">
+      <div class="exp-dot"></div>
+      <div class="exp-content">
+        <h3>English Teacher & Global Education Trainer</h3>
+        <div class="exp-meta">International Schools · Shanghai & Guangzhou, China · 2018 – 2024</div>
+        <p>Designed performance tracking systems for student cohorts. Led cross-functional training programs and managed school-wide initiatives at Dulwich College, Concord Academy, and English First.</p>
+      </div>
+    </div>
+    <div class="exp-item fade-in">
+      <div class="exp-dot"></div>
+      <div class="exp-content">
+        <h3>Surgical Care Technician</h3>
+        <div class="exp-meta">Baylor Scott & White · Austin, TX · 2017 – 2018</div>
+        <p>Supported orthopedic, neurosurgery, and pediatric surgical teams. Ensured operatory prep and patient documentation compliance.</p>
+      </div>
+    </div>
+    <div class="exp-item fade-in">
+      <div class="exp-dot"></div>
+      <div class="exp-content">
+        <h3>Certified Registered Dental Assistant</h3>
+        <div class="exp-meta">Carus Dental · Austin, TX · 2014 – 2017</div>
+        <p>Managed patient records, insurance coordination, and treatment documentation in a high-volume pediatric dental practice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-header fade-in">
+    <span class="section-label">Get in Touch</span>
+    <h2>Let's Connect</h2>
+    <p>Open to Business Intelligence and Data Analyst roles — especially in HealthTech. Available for remote or relocation.</p>
+  </div>
+  <div class="contact-links fade-in">
+    <a href="mailto:duong.t.jess@gmail.com" class="contact-link">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      duong.t.jess@gmail.com
+    </a>
+    <a href="https://www.linkedin.com/in/jesstduong/" target="_blank" class="contact-link">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/jess-duong" target="_blank" class="contact-link">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Jessica Duong. Built with care.</p>
+</footer>
+
+<script>
+// Nav scroll effect
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Close mobile nav on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('active'));
+});
+</script>
+</body>
+</html>
