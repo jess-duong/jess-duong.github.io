@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Jessica Duong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">JD</a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-header">
+  <span class="section-label">Portfolio</span>
+  <h1>All Projects</h1>
+  <p>End-to-end data projects spanning healthcare, e-commerce, streaming, gaming, and compliance.</p>
+</div>
+
+<section class="all-projects">
+  <div class="all-projects-grid">
+
+    <!-- 1. NYC Healthcare - Coming Soon -->
+    <a href="project-healthcare.html" class="project-card fade-in">
+      <div class="project-info">
+        <span class="project-tag">Healthcare Analytics</span>
+        <h3>NYC Healthcare Access Equity Analysis</h3>
+        <p>Geospatial analysis of healthcare data across NYC boroughs using regression and clustering to identify access equity gaps in underserved communities. Built a segmentation framework and Tableau dashboard to support data-driven resource allocation.</p>
+        <div class="project-tools">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">pandas</span>
+          <span class="tool-tag">NumPy</span>
+          <span class="tool-tag">scikit-learn</span>
+          <span class="tool-tag">matplotlib</span>
+          <span class="tool-tag">seaborn</span>
+          <span class="tool-tag">Jupyter</span>
+        </div>
+        <span class="view-link">View Case Study →</span>
+      </div>
+      <div class="project-visual-img" style="display:flex;align-items:center;justify-content:center;">
+        <span style="color:rgba(255,255,255,0.25);font-family:'DM Serif Display',serif;font-size:1.5rem;">Coming Soon</span>
+      </div>
+    </a>
+
+    <!-- 2. Instacart -->
+    <a href="project-instacart.html" class="project-card fade-in">
+      <div class="project-info">
+        <span class="project-tag">Customer Analytics</span>
+        <h3>Instacart Customer Segmentation & Revenue Optimization</h3>
+        <p>Cleaned and analyzed 32.4M records across 206K customers to build a segmentation framework identifying high-value personas and revenue patterns. Produced 27 visualizations and marketing recommendations for ad spend optimization, targeting, and cross-sell strategy.</p>
+        <div class="project-tools">
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">pandas</span>
+          <span class="tool-tag">NumPy</span>
+          <span class="tool-tag">matplotlib</span>
+          <span class="tool-tag">seaborn</span>
+        </div>
+        <span class="view-link">View Case Study →</span>
+        <span class="view-link github-link" data-href="https://github.com/jess-duong/instacart-basket-analysis">View GitHub →</span>
+      </div>
+      <div class="project-visual-img">
+        <img src="images/projects/instacart-constraints.jpg" alt="Instacart income vs spending scatter plot">
+      </div>
+    </a>
+
+    <!-- 3. Rockbuster -->
+    <a href="project-rockbuster.html" class="project-card fade-in">
+      <div class="project-info">
+        <span class="project-tag">Market Intelligence</span>
+        <h3>Rockbuster Revenue & Market Analysis</h3>
+        <p>Wrote complex SQL (JOINs, CTEs, window functions) across a 15-table relational database to calculate customer lifetime value and prioritize markets across 108 countries. Developed a phased rollout strategy with Tableau dashboards.</p>
+        <div class="project-tools">
+          <span class="tool-tag">SQL</span>
+          <span class="tool-tag">PostgreSQL</span>
+          <span class="tool-tag">Tableau</span>
+        </div>
+        <span class="view-link">View Case Study →</span>
+        <span class="view-link github-link" data-href="https://github.com/jess-duong/rockbuster-stealth-sql-analysis">View GitHub →</span>
+      </div>
+      <div class="project-visual-img">
+        <img src="images/projects/rockbuster-findings.jpg" alt="Rockbuster key findings">
+      </div>
+    </a>
+
+    <!-- 4. Influenza -->
+    <a href="project-influenza.html" class="project-card fade-in">
+      <div class="project-info">
+        <span class="project-tag">Workforce Analytics</span>
+        <h3>Influenza Staffing Optimization</h3>
+        <p>Forecasted seasonal staffing demand across 50 states using a population-based risk model (R² = 0.88), integrating CDC mortality and demographic data. Delivered a Tableau decision dashboard enabling proactive workforce planning 1–2 months ahead of peak flu season.</p>
+        <div class="project-tools">
+          <span class="tool-tag">Excel</span>
+          <span class="tool-tag">Tableau</span>
+          <span class="tool-tag">Statistical Modeling</span>
+          <span class="tool-tag">CDC Data</span>
+        </div>
+        <span class="view-link">View Case Study →</span>
+        <span class="view-link github-link" data-href="https://github.com/jess-duong/influenza-staffing-analysis">View GitHub →</span>
+      </div>
+      <div class="project-visual-img">
+        <img src="images/projects/influenza-map.jpg" alt="Geospatial map showing influenza hotspots">
+      </div>
+    </a>
+
+    <!-- 5. GameCo -->
+    <a href="project-gameco.html" class="project-card fade-in">
+      <div class="project-info">
+        <span class="project-tag">Sales Strategy</span>
+        <h3>GameCo Global Sales Strategy</h3>
+        <p>Analyzed 16,598 video game titles across global markets to identify regional demand patterns and genre preferences. Discovered Europe overtook North America by 2016 (37.7% vs. 31.9%), enabling data-backed budget allocation recommendations.</p>
+        <div class="project-tools">
+          <span class="tool-tag">Excel</span>
+          <span class="tool-tag">Pivot Tables</span>
+          <span class="tool-tag">Statistical Analysis</span>
+        </div>
+        <span class="view-link">View Case Study →</span>
+        <span class="view-link github-link" data-href="https://github.com/jess-duong/gameco-sales-analysis">View GitHub →</span>
+      </div>
+      <div class="project-visual-img">
+        <img src="images/projects/gameco-findings.jpg" alt="GameCo key findings">
+      </div>
+    </a>
+
+    <!-- 6. Risk --> & Responsible Analytics -->
+    <a href="project-risk-analytics.html" class="project-card fade-in">
+      <div class="project-info">
+        <span class="project-tag">Compliance & Ethics</span>
+        <h3>Risk & Responsible Analytics Foundations</h3>
+        <p>Applied analytics for compliance, forecasting, and ethical decision-making. Designed bias-free AML alert logic using behavioral thresholds that removed 6.8x demographic bias. Modeled trends and seasonality for proactive staffing.</p>
+        <div class="project-tools">
+          <span class="tool-tag">Excel</span>
+          <span class="tool-tag">Statistical Modeling</span>
+          <span class="tool-tag">Decision Trees</span>
+          <span class="tool-tag">Data Ethics</span>
+        </div>
+        <span class="view-link">View Case Study →</span>
+        <span class="view-link github-link" data-href="https://github.com/jess-duong/data-ethics-foundations">View GitHub →</span>
+      </div>
+      <div class="project-visual-img">
+        <img src="images/projects/risk-impact.jpg" alt="Risk analytics decision tree">
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-header fade-in">
+    <span class="section-label">Get in Touch</span>
+    <h2>Let's Connect</h2>
+    <p>Open to Data Analyst and Business Intelligence roles across industries — with particular strength in HealthTech.</p>
+  </div>
+  <div class="contact-links fade-in">
+    <a href="mailto:duong.t.jess@gmail.com" class="contact-link">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      duong.t.jess@gmail.com
+    </a>
+    <a href="https://www.linkedin.com/in/jess-duong/" target="_blank" class="contact-link">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://github.com/jess-duong" target="_blank" class="contact-link">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub
+    </a>
+  </div>
+  <div class="contact-resume fade-in">
+    <a href="Jessica_Duong_Resume.pdf" download="Jessica_Duong_Resume.pdf" class="btn btn-gold btn-sm" style="margin-top:24px;">Download Resume</a>
+  </div>
+</section>
+  <p>&copy; 2026 Jessica Duong. Built with care.</p>
+  <p class="footer-note">Website designed with AI assistance.</p>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('active'));
+});
+document.querySelectorAll('.github-link').forEach(el => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault(); e.stopPropagation();
+    window.open(el.dataset.href, '_blank');
+  });
+});</script>
+</body>
+</html>

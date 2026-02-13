@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rockbuster Revenue & Market Analysis — Jessica Duong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">JD</a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="case-hero">
+  <div class="case-hero-inner">
+    <span class="section-label">Market Intelligence</span>
+    <h1>Rockbuster Revenue & Market Analysis</h1>
+    <p class="case-subtitle">SQL-driven market intelligence for a phased streaming launch strategy</p>
+    <div class="case-tools">
+      <span class="tool-tag">SQL</span>
+      <span class="tool-tag">PostgreSQL</span>
+      <span class="tool-tag">pgAdmin</span>
+      <span class="tool-tag">Tableau</span>
+    </div>
+  </div>
+</section>
+
+    <div class="case-body">
+      <div class="case-section">
+        <h2>Overview</h2>
+        <p>Developed a market prioritization framework for Rockbuster Stealth's transition from physical rentals to streaming. Using complex SQL queries across a 15-table relational PostgreSQL database, I calculated customer lifetime value by geography, analyzed revenue by genre, and designed a phased rollout strategy targeting 108 countries.</p>
+      </div>
+
+      <div class="case-section">
+        <h2>Business Problem</h2>
+        <p>Rockbuster Stealth needed to decide where to launch its streaming service first, which content to license, and how to allocate a limited marketing budget across global markets.</p>
+        <div class="case-two-col">
+          <div class="case-col">
+            <h4>Business Objectives</h4>
+            <ul>
+              <li>Prioritize launch markets</li>
+              <li>Identify revenue-driving content</li>
+              <li>Target highest-value customers</li>
+              <li>Optimize rollout investment</li>
+            </ul>
+          </div>
+          <div class="case-col">
+            <h4>Data</h4>
+            <ul>
+              <li>15-table relational PostgreSQL database</li>
+              <li>599 customers across 108 countries</li>
+              <li>Rental and payment history</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <h2>Analytical Approach</h2>
+        <p>Used multi-table JOINs across the full schema, CTEs, subqueries, and window functions to calculate CLV by geography, revenue by genre and rating, and build a market prioritization framework.</p>
+        <figure class="case-img">
+          <img src="images/projects/rockbuster-constraints.jpg" alt="Horizontal bar chart showing total revenue by genre">
+          <figcaption>Sports, Sci-Fi, and Animation lead genre revenue, guiding content licensing priorities for the streaming launch.</figcaption>
+        </figure>
+      </div>
+
+      <div class="case-section">
+        <h2>Key Findings</h2>
+        <figure class="case-img">
+          <img src="images/projects/rockbuster-findings.jpg" alt="Bar chart showing top 10 customer countries led by India, China, and United States">
+          <figcaption>India (60), China (53), and the U.S. (36) represent the highest customer concentration, forming the Tier-1 launch markets.</figcaption>
+        </figure>
+        <div class="case-highlight">
+          <h3>Top Insights</h3>
+          <ul>
+            <li>India, China, U.S. = ~40% of customers → Tier-1 launch markets</li>
+            <li>Sports, Sci-Fi, Animation generate 20% higher revenue per rental</li>
+            <li>High-value customers distributed globally (not concentrated in one region)</li>
+            <li>Customer concentration enables phased Tier-1 rollout before broader expansion</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <h2>Business Impact</h2>
+        <figure class="case-img">
+          <img src="images/projects/rockbuster-impact.jpg" alt="Global customer distribution map and business impact summary">
+          <figcaption>High-value customers are distributed globally. Launch strategy must balance customer density with CLV.</figcaption>
+        </figure>
+        <div class="case-two-col">
+          <div class="case-col">
+            <h4>Revenue Impact</h4>
+            <ul>
+              <li>Prioritize launch in highest-density markets (India, China, U.S.)</li>
+              <li>Lift ARPU via high-performing genres (Sports, Sci-Fi, Animation)</li>
+              <li>Increase CLV through targeted acquisition</li>
+            </ul>
+          </div>
+          <div class="case-col">
+            <h4>Cost Efficiency</h4>
+            <ul>
+              <li>Allocate 60% of budget to Tier-1 countries</li>
+              <li>Reduce spend in low-ROI long-tail regions</li>
+              <li>Replace broad global campaigns with focused rollout</li>
+            </ul>
+          </div>
+        </div>
+        <p>Phased launch limits capital exposure and de-risks expansion with data-backed market prioritization.</p>
+        <div class="case-links">
+          <a href="https://github.com/jess-duong/rockbuster-stealth-sql-analysis" target="_blank" class="btn btn-primary btn-sm">GitHub Repository →</a>
+          <a href="projects.html" class="btn btn-outline btn-sm">← All Projects</a>
+        </div>
+      </div>
+    </div>
+    
+<div class="case-nav">
+  <a href="index.html">← Back to Homepage</a>
+</div>
+
+<footer>
+  <p>&copy; 2026 Jessica Duong. Built with care.</p>
+  <p class="footer-note">Website designed with AI assistance.</p>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
+</body>
+</html>
