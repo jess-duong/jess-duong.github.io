@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Influenza Staffing Optimization — Jessica Duong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">JD</a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="case-hero">
+  <div class="case-hero-inner">
+    <span class="section-label">Workforce Analytics</span>
+    <h1>Influenza Staffing Optimization</h1>
+    <p class="case-subtitle">Data-driven workforce planning for peak flu season across 50 states</p>
+    <div class="case-tools">
+      <span class="tool-tag">Excel</span>
+      <span class="tool-tag">Tableau</span>
+      <span class="tool-tag">Statistical Modeling</span>
+      <span class="tool-tag">CDC Data</span>
+      <span class="tool-tag">U.S. Census</span>
+    </div>
+  </div>
+</section>
+
+    <div class="case-body">
+      <div class="case-section">
+        <h2>Overview</h2>
+        <p>Built a staffing optimization model for healthcare operations leadership, using CDC mortality data and U.S. Census demographics to forecast seasonal flu staffing demand. The population-based risk model (R² = 0.88) enables proactive workforce planning 1–2 months ahead of peak flu season across all 50 states.</p>
+      </div>
+
+      <div class="case-section">
+        <h2>Business Problem</h2>
+        <p>Seasonal flu causes unpredictable demand spikes in healthcare facilities. Staffing mismatches increase costs and compromise patient safety, and hospitals often react too late to surges.</p>
+        <div class="case-two-col">
+          <div class="case-col">
+            <h4>Business Objectives</h4>
+            <ul>
+              <li>Identify high-risk states and time periods</li>
+              <li>Forecast staffing needs proactively</li>
+              <li>Enable data-driven workforce planning</li>
+            </ul>
+          </div>
+          <div class="case-col">
+            <h4>Data Sources</h4>
+            <ul>
+              <li>CDC influenza mortality</li>
+              <li>CDC vaccination coverage</li>
+              <li>CDC influenza visit trends</li>
+              <li>U.S. Census population and age demographics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <h2>Analytical Approach</h2>
+        <p>Integrated and cleaned data from multiple CDC and Census sources, calculated per-capita death rates, performed age-based risk segmentation, seasonal trend analysis, and geographic comparisons across all 50 states.</p>
+        <figure class="case-img">
+          <img src="images/projects/influenza-constraints.jpg" alt="Bar chart showing average ILI cases by month with peak in January-February">
+          <figcaption>Seasonal demand pattern shows winter months (Dec–Feb) drive ~5x more flu cases than summer, critical for staffing timeline decisions.</figcaption>
+        </figure>
+      </div>
+
+      <div class="case-section">
+        <h2>Key Findings</h2>
+        <figure class="case-img">
+          <img src="images/projects/influenza-findings.jpg" alt="Scatter plot showing strong correlation between elderly population and flu deaths with R²=0.88">
+          <figcaption>Elderly population size strongly predicts flu deaths (R² = 0.88), making age the primary factor in staffing allocation decisions.</figcaption>
+        </figure>
+        <div class="case-highlight">
+          <h3>Top Insights</h3>
+          <ul>
+            <li>Elderly population size strongly predicts flu deaths (R² = 0.88)</li>
+            <li>Winter demand ~5x higher than summer months</li>
+            <li>Risk concentrated in Alaska and select Midwest/Northeast states</li>
+            <li>The 65+ population experiences 5.2x higher death rates</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <h2>Business Impact</h2>
+        <div class="case-two-col">
+          <div class="case-col">
+            <h4>Operational Impact</h4>
+            <ul>
+              <li>Forecast staffing using population-based model (R² = 0.88)</li>
+              <li>Prioritize senior-heavy states with ~5x higher mortality risk</li>
+              <li>Plan schedules 1–2 months ahead instead of reactive hiring</li>
+            </ul>
+          </div>
+          <div class="case-col">
+            <h4>Cost & Patient Impact</h4>
+            <ul>
+              <li>Reduce summer overstaffing through seasonal reallocation</li>
+              <li>Avoid emergency surge hiring by planning for winter demand spikes</li>
+              <li>Improve care outcomes for 65+ populations in high-risk regions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <h2>Deliverables</h2>
+        <figure class="case-img">
+          <img src="images/projects/influenza-dashboard.jpg" alt="Tableau staffing decision dashboard">
+          <figcaption>Interactive Tableau dashboard for staffing decisions: state risk scoring, demand forecasts, and allocation recommendations.</figcaption>
+        </figure>
+        <div class="case-links">
+          <a href="https://github.com/jess-duong/influenza-staffing-analysis" target="_blank" class="btn btn-primary btn-sm">GitHub Repository →</a>
+          <a href="https://public.tableau.com/app/profile/jess.duong/viz/InfluenzaBurdenVaccinationCoverage/InfluenzaStaffingAnalysis" target="_blank" class="btn btn-primary btn-sm">Tableau Dashboard →</a>
+          <a href="projects.html" class="btn btn-outline btn-sm">← All Projects</a>
+        </div>
+      </div>
+    </div>
+    
+<div class="case-nav">
+  <a href="index.html">← Back to Homepage</a>
+</div>
+
+<footer>
+  <p>&copy; 2026 Jessica Duong. Built with care.</p>
+  <p class="footer-note">Website designed with AI assistance.</p>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
+</body>
+</html>

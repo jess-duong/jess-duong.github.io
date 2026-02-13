@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NYC Healthcare Access Equity Analysis — Jessica Duong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">JD</a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="case-hero">
+  <div class="case-hero-inner">
+    <span class="section-label">Healthcare Analytics</span>
+    <h1>NYC Healthcare Access Equity Analysis</h1>
+    <p class="case-subtitle">Geospatial data analysis identifying healthcare access gaps across NYC boroughs</p>
+    <div class="case-tools">
+      <span class="tool-tag">Python</span>
+      <span class="tool-tag">pandas</span>
+      <span class="tool-tag">NumPy</span>
+      <span class="tool-tag">scikit-learn</span>
+      <span class="tool-tag">matplotlib</span>
+      <span class="tool-tag">seaborn</span>
+      <span class="tool-tag">Jupyter</span>
+    </div>
+  </div>
+</section>
+
+    <div class="case-body">
+      <div class="case-section">
+        <h2>Overview</h2>
+        <p>This project analyzes geospatial healthcare data across NYC boroughs using regression and clustering to identify access equity gaps in underserved communities. A segmentation framework and Tableau dashboard were built to support data-driven resource allocation for public health stakeholders.</p>
+        <div class="case-highlight">
+          <h3>Project Status</h3>
+          <p style="color:rgba(255,255,255,0.85);">This project is currently in development. The full case study, visualizations, and deliverables will be published soon. Check back for the complete analysis.</p>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <h2>Planned Approach</h2>
+        <h3>Business Objective</h3>
+        <p>Analyze healthcare facility access across NYC boroughs to identify underserved areas and inform equitable resource allocation.</p>
+        <h3>Key Questions</h3>
+        <ul>
+          <li>Which NYC boroughs have the greatest healthcare access gaps?</li>
+          <li>How do demographic factors correlate with facility availability?</li>
+          <li>What segmentation framework can guide resource allocation decisions?</li>
+        </ul>
+      </div>
+
+      <div class="case-section">
+        <div class="case-links">
+          <a href="https://github.com/jess-duong" target="_blank" class="btn btn-primary btn-sm">GitHub Repository →</a>
+          <a href="projects.html" class="btn btn-outline btn-sm">← All Projects</a>
+        </div>
+      </div>
+    </div>
+    
+<div class="case-nav">
+  <a href="index.html">← Back to Homepage</a>
+</div>
+
+<footer>
+  <p>&copy; 2026 Jessica Duong. Built with care.</p>
+  <p class="footer-note">Website designed with AI assistance.</p>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+</script>
+</body>
+</html>
