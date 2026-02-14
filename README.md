@@ -4,4 +4,5 @@ Personal portfolio site showcasing data analytics projects in healthcare, e-comm
 
 **Live site:** [jess-duong.github.io](https://jess-duong.github.io)
 
-Built with HTML, CSS, and JavaScript. Website designed with AI assistance.
+Built with HTML, CSS, and JavaScript. 
+Website designed with AI assistance.
