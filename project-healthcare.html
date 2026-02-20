@@ -28,56 +28,122 @@
   <div class="case-hero-inner">
     <span class="section-label">Healthcare Analytics</span>
     <h1>NYC Healthcare Access Equity Analysis</h1>
-    <p class="case-subtitle">Geospatial data analysis identifying healthcare access gaps across NYC boroughs</p>
+    <p class="case-subtitle">Multi-method health equity analysis revealing that income — not facility access — drives health disparities across 2,368 NYC census tracts.</p>
     <div class="case-tools">
       <span class="tool-tag">Python</span>
       <span class="tool-tag">pandas</span>
-      <span class="tool-tag">NumPy</span>
       <span class="tool-tag">scikit-learn</span>
+      <span class="tool-tag">statsmodels</span>
       <span class="tool-tag">matplotlib</span>
       <span class="tool-tag">seaborn</span>
+      <span class="tool-tag">Folium</span>
+      <span class="tool-tag">Tableau</span>
+      <span class="tool-tag">Excel</span>
       <span class="tool-tag">Jupyter</span>
     </div>
   </div>
 </section>
 
-    <div class="case-body">
-      <div class="case-section">
-        <h2>Overview</h2>
-        <p>This project analyzes geospatial healthcare data across NYC boroughs using regression and clustering to identify access equity gaps in underserved communities. A segmentation framework and Tableau dashboard were built to support data-driven resource allocation for public health stakeholders.</p>
-        <div class="case-highlight">
-          <h3>Project Status</h3>
-          <p style="color:rgba(255,255,255,0.85);">This project is currently in development. The full case study, visualizations, and deliverables will be published soon. Check back for the complete analysis.</p>
-        </div>
-      </div>
+<div class="case-body">
+  <div class="case-section">
+    <h2>Overview</h2>
+    <p>NYC invests billions in healthcare infrastructure, yet health outcomes vary dramatically by neighborhood. The conventional assumption — that more facilities lead to better outcomes — had never been tested with data at the neighborhood level. This analysis examined 2,368 census tracts across all five boroughs, combining CDC health data, U.S. Census demographics, and NYC facility records to identify the real drivers of health disparities and segment neighborhoods into actionable profiles for targeted investment.</p>
+  </div>
 
-      <div class="case-section">
-        <h2>Planned Approach</h2>
-        <h3>Business Objective</h3>
-        <p>Analyze healthcare facility access across NYC boroughs to identify underserved areas and inform equitable resource allocation.</p>
-        <h3>Key Questions</h3>
+  <div class="case-section">
+    <h2>Business Problem</h2>
+    <p>NYC Department of Health leadership, community health organizations, and hospital network administrators needed data-driven answers to guide resource allocation — but lacked neighborhood-level segmentation to make targeted decisions.</p>
+    <div class="case-two-col">
+      <div class="case-col">
+        <h4>Business Objectives</h4>
         <ul>
-          <li>Which NYC boroughs have the greatest healthcare access gaps?</li>
-          <li>How do demographic factors correlate with facility availability?</li>
-          <li>What segmentation framework can guide resource allocation decisions?</li>
+          <li>Identify primary drivers of health outcome disparities across NYC neighborhoods</li>
+          <li>Test whether healthcare facility access improves health outcomes</li>
+          <li>Segment neighborhoods into actionable health profiles for targeted investment</li>
+          <li>Provide data-driven recommendations for resource allocation</li>
         </ul>
       </div>
-
-      <div class="case-section">
-        <div class="case-links">
-          <a href="https://github.com/jess-duong" target="_blank" class="btn btn-primary btn-sm">GitHub Repository →</a>
-          <a href="projects.html" class="btn btn-outline btn-sm">← All Projects</a>
-        </div>
+      <div class="case-col">
+        <h4>Data Sources</h4>
+        <ul>
+          <li>CDC PLACES (2020–2024 releases)</li>
+          <li>U.S. Census American Community Survey</li>
+          <li>NYC Open Data Health Facility Dataset</li>
+          <li>FRED NYC Unemployment Rate</li>
+          <li>2,368 census tracts · 10,699 observations · 2018–2022</li>
+        </ul>
       </div>
     </div>
-    
+  </div>
+
+  <div class="case-section">
+    <h2>Key Findings</h2>
+    <figure class="case-img">
+      <img src="images/projects/healthcare-bronx-paradox.png" alt="The Bronx Paradox: The Bronx has the most facilities per 100K residents (6.7) and the worst diabetes rate (14.2%)">
+      <figcaption>The Bronx Paradox: More facilities per capita, yet the worst health outcomes across every metric.</figcaption>
+    </figure>
+    <div class="case-highlight">
+      <h3>Top Insights</h3>
+      <ul>
+        <li>The Bronx has the most facilities per capita (6.7 per 100K) and the worst diabetes rate (14.2%) → income drives outcomes, not access</li>
+        <li>Four neighborhood profiles identified: healthiest ($102K income, 9% diabetes) to most vulnerable ($53K income, 14.8% diabetes) → clear income gradient</li>
+        <li>High-need communities concentrated in South Bronx and Central Brooklyn → geographic targeting is possible</li>
+        <li>NYC unemployment hit 17.6% during COVID, disproportionately impacting already-vulnerable neighborhoods → economic shocks compound health disparities</li>
+      </ul>
+    </div>
+    <figure class="case-img">
+      <img src="images/projects/healthcare-radar.png" alt="Four neighborhood health profiles across NYC showing obesity, diabetes, stroke, uninsured rates, and income need">
+      <figcaption>Four distinct neighborhood health profiles — from High-Income Healthiest to High-Need Under-Resourced.</figcaption>
+    </figure>
+  </div>
+
+  <div class="case-section">
+    <h2>Geographic Segmentation</h2>
+    <figure class="case-img">
+      <img src="images/projects/healthcare-cluster-map.png" alt="Map of NYC showing four neighborhood health profiles by census tract">
+      <figcaption>Mapping NYC's four neighborhood health profiles — high-need communities concentrated in the Bronx and Central Brooklyn.</figcaption>
+    </figure>
+  </div>
+
+  <div class="case-section">
+    <h2>Recommendations</h2>
+    <div class="case-two-col">
+      <div class="case-col">
+        <h4>Where to Invest</h4>
+        <ul>
+          <li>Prioritize South Bronx and Central Brooklyn ($53K income, 14.8% diabetes)</li>
+          <li>These neighborhoods need integrated health and economic support, not just more clinics</li>
+          <li>Target Queens for insurance navigation (highest uninsured rate at 7.4%)</li>
+        </ul>
+      </div>
+      <div class="case-col">
+        <h4>How to Invest</h4>
+        <ul>
+          <li>Shift from facility expansion to barrier reduction (transportation, health literacy, preventive care)</li>
+          <li>Deploy community health workers and insurance enrollment navigators</li>
+          <li>Build economic resilience programs in vulnerable neighborhoods</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-section">
+    <h2>Deliverables</h2>
+    <p>Multi-method health equity analysis for targeted neighborhood investment. Analyzes 2,368 census tracts across NYC to reveal that income — not facility access — drives health disparities.</p>
+    <div class="case-links">
+      <a href="https://public.tableau.com/app/profile/jess.duong/viz/NYCHealthcareAccessEquityAnalysis/NYCHealthcareAccessEquityAnalysis" target="_blank" class="btn btn-primary btn-sm">Tableau Dashboard →</a>
+      <a href="https://github.com/jess-duong/nyc-healthcare-equity-analysis" target="_blank" class="btn btn-outline btn-sm">GitHub Repository →</a>
+      <a href="projects.html" class="btn btn-outline btn-sm">← All Projects</a>
+    </div>
+  </div>
+</div>
+
 <div class="case-nav">
-  <a href="index.html">← Back to Homepage</a>
+  <a href="projects.html">← Back to All Projects</a>
 </div>
 
 <footer>
   <p>&copy; 2026 Jessica Duong. Built with care.</p>
-  <p class="footer-note">Website designed with AI assistance.</p>
 </footer>
 
 <script>
