@@ -123,6 +123,14 @@ section { padding: 100px 32px; }
   color: var(--gold); margin-bottom: 12px;
 }
 
+.case-study-content a {
+  color: #2B5329; /* dark green */
+}
+
+.case-study-content a:hover {
+  color: #C4A84D; /* gold on hover */
+}
+
 /* ---- HERO ---- */
 .hero {
   min-height: 100vh;
