@@ -123,12 +123,12 @@ section { padding: 100px 32px; }
   color: var(--gold); margin-bottom: 12px;
 }
 
-.case-study-content p a {
+.case-body p a {
   color: #2B5329;
   text-decoration: underline;
 }
 
-.case-study-content p a:hover {
+.case-body p a:hover {
   color: #C4A84D;
 }
 
